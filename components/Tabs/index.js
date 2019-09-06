@@ -17,8 +17,8 @@ function tabMaker(topic) {
 }
 
 //tabMaker("Sample TOPIC");
-
-axios.get('https://lambda-times-backend.herokuapp.com/topics')
+const tabUrl = 'https://lambda-times-backend.herokuapp.com/topics';
+axios.get(tabUrl)
 .then(response => {
     //console.log(response.data.topics);
     const topicsArray = response.data.topics;
