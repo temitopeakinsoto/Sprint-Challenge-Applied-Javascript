@@ -42,7 +42,7 @@ function carouselMaker() {
   }
   const imgUrl = ['mountains.jpeg', 'computer.jpeg', 'trees.jpeg', 'turntable.jpeg'];
   for (let i=0; i < imgUrl.length; i++){
-    imgElements[i].classList.add('display-img');
+    imgElements[i].style.display = "block";
     imgElements[i].setAttribute('src', `./assets/carousel/${imgUrl[i]}`);
 
   }
