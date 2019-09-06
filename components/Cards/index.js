@@ -42,7 +42,7 @@ function cardMaker(headlineInformation) {
     imgElement.setAttribute('src', headlineInformation.url);
 
     const spanElement = document.createElement('span');
-    spanElement.textContent =  `By temitope ${headlineInformation.author}`;
+    spanElement.textContent =  `By ${headlineInformation.author}`;
 
     cardDiv.appendChild(headlineDiv);
     cardDiv.appendChild(authorDiv);
@@ -60,6 +60,27 @@ function cardMaker(headlineInformation) {
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then(response => {
-    console.log(response.data);
+    const responseObject = response.data.articles;
+
+    const javascriptArray = responseObject.javascript;
+    javascriptArray.forEach(javascriptItem => {
+        cardMaker(javascriptItem);
+    })
+    const bootstrapArray = responseObject.bootstrap;
+    bootstrapArray.forEach(bootstrapItem => {
+        cardMaker(bootstrapItem);
+    })
+    const technologyArray = responseObject.technology;
+    technologyArray.forEach(technologyItem => {
+        cardMaker(technologyItem);
+    })
+    const jqueryArray = responseObject.jquery;
+    jqueryArray.forEach(jqueryItem => {
+        cardMaker(jqueryItem);
+    })
+    const nodeArray = responseObject.node;
+    nodeArray.forEach(nodeItem => {
+        cardMaker(nodeItem);
+    })
 })
 .catch()
