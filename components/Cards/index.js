@@ -50,11 +50,16 @@ function cardMaker(headlineInformation) {
     authorDiv.appendChild(spanElement);
     imgContainerDiv.appendChild(imgElement);
 
-
     console.log('helloooo', cardDiv);
     document.querySelector('.cards-container').appendChild(cardDiv);
 
     
 }
 
-cardMaker(headlineInformation);
+//cardMaker(headlineInformation);
+
+axios.get('https://lambda-times-backend.herokuapp.com/articles')
+.then(response => {
+    console.log(response.data);
+})
+.catch()
