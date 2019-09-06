@@ -24,4 +24,9 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
     const topicsArray = response.data.topics;
     topicsArray.forEach( topicItem => tabMaker(topicItem) )
 })
-.catch();
+.catch(error => {
+    //debugger
+    const errorMessage = document.createElement('h1');
+    errorMessage.textContent = `Could not create tabs! ${error.message}`;
+    document.querySelector('.title').appendChild(errorMessage);
+})
