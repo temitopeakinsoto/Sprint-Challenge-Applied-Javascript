@@ -18,19 +18,19 @@
 //
 // Create a card for each of the articles and add the card to the DOM.
 
-headlineInformation = {
+cardInformation = {
     headline: "", 
-    url: "", 
-    author: ""
+    authorPhoto: "", 
+    authorName: ""
 }
 
-function cardMaker(headlineInformation) {
+function cardMaker(cardInformation) {
     const cardDiv = document.createElement('div');
     cardDiv.classList.add('card');
 
     const headlineDiv = document.createElement('div');
     headlineDiv.classList.add('headline');
-    headlineDiv.textContent = headlineInformation.headline;
+    headlineDiv.textContent = cardInformation.headline;
 
     const authorDiv = document.createElement('div');
     authorDiv.classList.add('author');
@@ -39,10 +39,10 @@ function cardMaker(headlineInformation) {
     imgContainerDiv.classList.add('img-container');
 
     const imgElement = document.createElement('img');
-    imgElement.setAttribute('src', headlineInformation.url);
+    imgElement.setAttribute('src', cardInformation.authorPhoto);
 
     const spanElement = document.createElement('span');
-    spanElement.textContent =  `By ${headlineInformation.author}`;
+    spanElement.textContent =  `By ${cardInformation.authorName}`;
 
     cardDiv.appendChild(headlineDiv);
     cardDiv.appendChild(authorDiv);
@@ -50,10 +50,7 @@ function cardMaker(headlineInformation) {
     authorDiv.appendChild(spanElement);
     imgContainerDiv.appendChild(imgElement);
 
-    console.log('helloooo', cardDiv);
-    document.querySelector('.cards-container').appendChild(cardDiv);
-
-    
+    document.querySelector('.cards-container').appendChild(cardDiv);   
 }
 
 //cardMaker(headlineInformation);
@@ -63,24 +60,24 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
     const responseObject = response.data.articles;
 
     const javascriptArray = responseObject.javascript;
-    javascriptArray.forEach(javascriptItem => {
-        cardMaker(javascriptItem);
+    javascriptArray.forEach(javascriptArrayItem => {
+        cardMaker(javascriptArrayItem);
     })
     const bootstrapArray = responseObject.bootstrap;
-    bootstrapArray.forEach(bootstrapItem => {
-        cardMaker(bootstrapItem);
+    bootstrapArray.forEach(bootstrapArrayItem => {
+        cardMaker(bootstrapArrayItem);
     })
     const technologyArray = responseObject.technology;
-    technologyArray.forEach(technologyItem => {
-        cardMaker(technologyItem);
+    technologyArray.forEach(technologyArrayItem => {
+        cardMaker(technologyArrayItem);
     })
     const jqueryArray = responseObject.jquery;
-    jqueryArray.forEach(jqueryItem => {
-        cardMaker(jqueryItem);
+    jqueryArray.forEach(jqueryArrayItem => {
+        cardMaker(jqueryArrayItem);
     })
     const nodeArray = responseObject.node;
-    nodeArray.forEach(nodeItem => {
-        cardMaker(nodeItem);
+    nodeArray.forEach(nodeArrayItem => {
+        cardMaker(nodeArrayItem);
     })
 })
 .catch()
