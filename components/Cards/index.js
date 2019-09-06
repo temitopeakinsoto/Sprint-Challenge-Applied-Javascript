@@ -17,3 +17,42 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
+
+headlineInformation = {
+    headline: "", 
+    url: "", 
+    author: ""
+}
+
+function cardMaker(headlineInformation) {
+    const cardDiv = document.createElement('div');
+    cardDiv.classList.add('card');
+
+    const headlineDiv = document.createElement('div');
+    headlineDiv.classList.add('headline');
+    headlineDiv.textContent = headlineInformation.headline;
+
+    const authorDiv = document.createElement('div');
+    authorDiv.classList.add('author');
+
+    const imgContainerDiv = document.createElement('div');
+    imgContainerDiv.classList.add('img-container');
+
+    const imgElement = document.createElement('img');
+    imgElement.setAttribute('src', headlineInformation.url);
+
+    const spanElement = document.createElement('span');
+    spanElement.textContent =  `By ${headlineInformation.author}`;
+
+    cardDiv.appendChild(headlineDiv);
+    cardDiv.appendChild(authorDiv);
+    authorDiv.appendChild(imgContainerDiv);
+    authorDiv.appendChild(spanElement);
+    imgContainerDiv.appendChild(imgElement);
+
+
+    console.log('helloooo', cardDiv);
+    
+}
+
+cardMaker(headlineInformation);
