@@ -60,27 +60,14 @@ const axiosUrl = 'https://lambda-times-backend.herokuapp.com/articles';
 axios.get(axiosUrl)
 .then(response => {
     const responseObject = response.data.articles;
+    const responseObjectArray = Object.values(responseObject);
+    //console.log(responseObjectArray);
 
-    const javascriptArray = responseObject.javascript;
-    javascriptArray.forEach(javascriptArrayItem => {
-        cardMaker(javascriptArrayItem);
-    })
-    const bootstrapArray = responseObject.bootstrap;
-    bootstrapArray.forEach(bootstrapArrayItem => {
-        cardMaker(bootstrapArrayItem);
-    })
-    const technologyArray = responseObject.technology;
-    technologyArray.forEach(technologyArrayItem => {
-        cardMaker(technologyArrayItem);
-    })
-    const jqueryArray = responseObject.jquery;
-    jqueryArray.forEach(jqueryArrayItem => {
-        cardMaker(jqueryArrayItem);
-    })
-    const nodeArray = responseObject.node;
-    nodeArray.forEach(nodeArrayItem => {
-        cardMaker(nodeArrayItem);
-    })
+    responseObjectArray.forEach(item => {
+        item.forEach(ind => {
+            cardMaker(ind);
+        })
+    })    
 })
 .catch(error => {
     //debugger

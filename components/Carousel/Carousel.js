@@ -49,6 +49,7 @@ function carouselMaker() {
     
   const carouselContainer = document.querySelector('.carousel-container');
   carouselContainer.appendChild(outterDiv);
-  console.log('this outter div is', outterDiv);
+
 }
 carouselMaker();
+
