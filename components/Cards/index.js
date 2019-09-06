@@ -24,6 +24,7 @@ cardInformation = {
     authorName: ""
 }
 
+
 function cardMaker(cardInformation) {
     const cardDiv = document.createElement('div');
     cardDiv.classList.add('card');
@@ -55,7 +56,8 @@ function cardMaker(cardInformation) {
 
 //cardMaker(headlineInformation);
 
-axios.get('https://lambda-times-backend.herokuapp.com/articles')
+const axiosUrl = 'https://lambda-times-backend.herokuapp.com/articles';
+axios.get(axiosUrl)
 .then(response => {
     const responseObject = response.data.articles;
 
@@ -80,4 +82,9 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
         cardMaker(nodeArrayItem);
     })
 })
-.catch()
+.catch(error => {
+    //debugger
+    const errorMessage = document.createElement('h1');
+    errorMessage.textContent = error.message;
+    document.querySelector('.title').appendChild(errorMessage);
+})
