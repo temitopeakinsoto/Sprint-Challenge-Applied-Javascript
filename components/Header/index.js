@@ -27,9 +27,11 @@ function Header() {
     divElement.appendChild(firstSpanElement);
     divElement.appendChild(h1Element);
     divElement.appendChild(lastSpanElement);
-
-    return divElement;
+    
+    document.querySelector('.header-container').appendChild(divElement);
+    //return divElement;
+    
 }
 
 const header = Header();
-document.querySelector('.header-container').appendChild(header);
+
