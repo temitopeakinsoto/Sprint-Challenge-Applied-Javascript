@@ -18,4 +18,10 @@ function tabMaker(topic) {
 
 //tabMaker("Sample TOPIC");
 
-
+axios.get('https://lambda-times-backend.herokuapp.com/topics')
+.then(response => {
+    //console.log(response.data.topics);
+    const topicsArray = response.data.topics;
+    topicsArray.forEach( topicItem => tabMaker(topicItem) )
+})
+.catch();
