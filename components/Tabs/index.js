@@ -7,3 +7,15 @@
 //
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
+
+function tabMaker(topic) {
+    const tabDivElement = document.createElement('div');
+    tabDivElement.classList.add('tab');
+    tabDivElement.textContent = topic;
+
+    document.querySelector('.topics').appendChild(tabDivElement);
+}
+
+//tabMaker("Sample TOPIC");
+
+
