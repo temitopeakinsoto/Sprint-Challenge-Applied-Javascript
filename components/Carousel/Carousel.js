@@ -18,7 +18,7 @@
   </div>
 */
 
-function createCarousel() {
+function carouselMaker() {
   const outterDiv = document.createElement('div');
   outterDiv.classList.add('carousel');
   const imgElements = [];
@@ -51,4 +51,4 @@ function createCarousel() {
   carouselContainer.appendChild(outterDiv);
   console.log('this outter div is', outterDiv);
 }
-createCarousel();
+carouselMaker();
