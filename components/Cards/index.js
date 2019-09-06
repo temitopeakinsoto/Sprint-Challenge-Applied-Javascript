@@ -42,7 +42,7 @@ function cardMaker(headlineInformation) {
     imgElement.setAttribute('src', headlineInformation.url);
 
     const spanElement = document.createElement('span');
-    spanElement.textContent =  `By ${headlineInformation.author}`;
+    spanElement.textContent =  `By temitope ${headlineInformation.author}`;
 
     cardDiv.appendChild(headlineDiv);
     cardDiv.appendChild(authorDiv);
@@ -52,6 +52,8 @@ function cardMaker(headlineInformation) {
 
 
     console.log('helloooo', cardDiv);
+    document.querySelector('.cards-container').appendChild(cardDiv);
+
     
 }
 
