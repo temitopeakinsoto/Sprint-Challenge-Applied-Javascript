@@ -17,3 +17,39 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+function carouselMaker() {
+  const outterDiv = document.createElement('div');
+  outterDiv.classList.add('carousel');
+  const imgElements = [];
+  for(let i=0; i < 6; i++){
+    if(i === 0){
+      const firstNestedDiv = document.createElement('div');
+      firstNestedDiv.classList.add('left-button');
+      outterDiv.appendChild(firstNestedDiv);
+    }
+    else if (i > 0 && i < 5){
+      const img = document.createElement('img');
+
+      outterDiv.appendChild(img);
+      imgElements.push(img);
+      
+    } else {
+      const lastNestedDiv = document.createElement('div');
+      lastNestedDiv.classList.add('right-button');
+      outterDiv.appendChild(lastNestedDiv);
+    }
+  }
+  const imgUrl = ['mountains.jpeg', 'computer.jpeg', 'trees.jpeg', 'turntable.jpeg'];
+  for (let i=0; i < imgUrl.length; i++){
+    imgElements[i].style.display = "block";
+    imgElements[i].setAttribute('src', `./assets/carousel/${imgUrl[i]}`);
+
+  }
+    
+  const carouselContainer = document.querySelector('.carousel-container');
+  carouselContainer.appendChild(outterDiv);
+
+}
+carouselMaker();
+

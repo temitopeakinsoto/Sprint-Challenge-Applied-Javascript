@@ -30,14 +30,32 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+ANS: The DOM is an object representation of an HTML document which can be modified with a scripting language such as JavaScript. 
+The DOM is not the HTML page itself but only an object representation of it. Being an object, the DOM has a bunch of Methods 
+and properties attached to it and that makes it possible for us to manipulate what and how a browser renders an HTML page at the 
+end of the day.
+
 2. What is an event?
+ANS: Events and "occurences" or "things" that happen with or to our html elements/document. Events fire pretty much all the time 
+and events may refer to things a user does or things the browser does. Using Javascript, such events can be responded to accordingly.
+e.g of events include: the page loading, the user click a button, the user hovering on a particular section or the entire web
+page, rolling the mouse wheel etc
 
 3. What is an event listener?
+ANS: An event listener is a function that we set up to respond to certain events as they fire within our html document. The browser
+listens for an event and invokes a particular call back function whenever that event fires.
 
 4. Why would we convert a NodeList into an Array?
+ANS: Why would we convert a NodeList into an Array?
+A nodeList is not an array, it is only similar to an array in the sense that it is an array-like structure
+that contains all the selected node types. NodeList is an object that consists of a list of all nodes in a 
+document or of all the nodes within a particular selected set of nodes. Therefore, for us to be able to call 
+certain array method on a NodeList, we first need to covert it to an array using the Array.from() method, 
+passing the NodeList as an argument.
 
 5. What is a component?
-
+ANS: Generally speaking, a component means a segment or a fragment of an integrated whole! A web component, however, could mean a function which can be used together to create custom elements or functionality and can be reused over and over again.
+It could also mean a function which performs certain logic/algorithms and returns an DOM/HTML element as we have seen during the course of our lecture week.
 ### Git Set up
 
 * [ ] Fork the project into your GitHub user account
